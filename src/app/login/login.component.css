@@ -1,0 +1,156 @@
+/* Background */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Deep matte black */
+}
+
+.shape-overlay {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 188, 212, 0.2);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  filter: blur(100px);
+}
+
+/* Login Box */
+.login-box {
+  background: #1a1a1a; /* Matte dark */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  width: 400px; /* Larger box */
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #262626; /* Subtle border */
+}
+
+/* Product Name */
+.product-name {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 5px;
+  color: #00bcd4; /* DocuSign branding color */
+}
+
+/* Product Tag */
+.product-tag {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #00bcd4; /* DocuSign branding color */
+}
+
+/* Error Messages */
+.error {
+  color: #ff4b5c;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.error-message {
+  color: #ff4b5c;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Disable button if form is invalid */
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #bbbbbb;
+}
+
+.input-group input {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  transition: border 0.2s ease-in-out;
+}
+
+.input-group input:focus {
+  border: 1px solid #00bcd4;
+}
+
+/* Sign In Button */
+.btn-signin {
+  width: 100%;
+  padding: 14px;
+  background: #00bcd4;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-signin:hover {
+  background: #0097a7;
+}
+
+
+/* Forgot Password & Sign Up Links */
+.extra-options {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.extra-options a {
+  color: #00bcd4;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.extra-options a:hover {
+  color: #0097a7;
+}
+
+.divider {
+  margin: 0 8px;
+  color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 450px) {
+  .login-box {
+    width: 90%;
+    padding: 2rem;
+  }
+  /* Adjust the shape overlay for small screens */
+  .shape-overlay {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+}

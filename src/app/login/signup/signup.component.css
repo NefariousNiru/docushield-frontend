@@ -1,0 +1,215 @@
+/* Fullscreen Container */
+.register-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0d0d0d; /* Matte Dark Background */
+}
+
+/* Left Side: Product Info */
+.register-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: #1a1a1a;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Side - Product Text */
+.product-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00bcd4;
+}
+
+.product-description {
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Shapes Overlay */
+.shape-overlay {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 188, 212, 0.2);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  filter: blur(100px);
+}
+
+/* Right Side: Registration Form */
+.register-form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: #1e1e1e;
+  color: #ffffff;
+  border-left: 2px solid #262626;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Styling */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #bbbbbb;
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  transition: border 0.2s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border: 1px solid #00bcd4;
+}
+
+/* Error Messages */
+.error {
+  color: #ff4b5c;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.error-message {
+  color: #ff4b5c;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Disable button if form is invalid */
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* Help Section */
+.help {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #bbbbbb;
+}
+
+.help a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.help a:hover {
+  color: #0097a7;
+}
+
+/* Organization Approval Message */
+.org-warning {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f39c12; /* Yellowish warning text */
+  text-align: left;
+}
+
+.org-warning a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.org-warning a:hover {
+  color: #0097a7;
+}
+
+
+/* Register Button */
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  background: #00bcd4;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-register:hover {
+  background: #0097a7;
+}
+
+/* Sign In Link */
+.extra-options {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.extra-options a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.extra-options a:hover {
+  color: #0097a7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .register-info {
+    width: 100%;
+    height: 40vh;
+    padding: 2rem;
+  }
+
+  .register-form {
+    width: 100%;
+    height: 60vh;
+    padding: 2rem;
+  }
+
+  .shape-overlay {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+  }
+}

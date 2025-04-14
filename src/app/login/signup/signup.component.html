@@ -1,0 +1,92 @@
+<div class="register-container">
+  <!-- Left Side: Product Info & Shapes -->
+  <div class="register-info">
+    <h1 class="product-title">Welcome to DocuShield</h1>
+    <p class="product-description">
+      Securely store and verify academic & employment credentials with cutting-edge encryption.
+    </p>
+    <div class="shape-overlay"></div>
+  </div>
+
+  <!-- Right Side: Registration Form -->
+  <div class="register-form">
+    <h2 class="text-center mb-4">Create Your Account</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="registerUserWithEmailAndPassword()">
+      <!-- Name -->
+      <div class="input-group">
+        <label for="name">Legal Name</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter your full legal name" required />
+        <span class="error" *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+          Name must be at least 3 characters.
+        </span>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email" required />
+        <span class="error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+          Invalid email address.
+        </span>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Create a strong password" required />
+        <span class="error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+          Password must have 8+ characters, 1 uppercase, 1 lowercase, 1 digit, and 1 special symbol (&#64;$!%*?&).
+        </span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password" required />
+        <span class="error" *ngIf="signupForm.hasError('mismatch') && signupForm.get('confirmPassword')?.touched">
+          Passwords do not match.
+        </span>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="input-group">
+        <label for="role">Register As</label>
+        <select id="role" formControlName="role" required>
+          <option value="INDIVIDUAL">Individual</option>
+          <option value="ORGANIZATION">Organization</option>
+        </select>
+        <span class="error" *ngIf="signupForm.get('role')?.invalid && signupForm.get('role')?.touched">
+          Please select a role.
+        </span>
+      </div>
+
+      <div class="org-warning" *ngIf="isOrganizationRole">
+        <p>Organizations need to be approved and may take up to 7 days. <a href="mailto:nirupomboseroy99@gmail.com">Email us</a> for more details.</p>
+      </div>
+
+      <!-- Error Message -->
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-register" [disabled]="signupForm.invalid">Create Account</button>
+
+      <!-- Already have an account? -->
+      <div class="extra-options">
+        <button class="signin-link btn btn-dark" (click)="goToSignIn()">Already have an account? Sign In</button>
+      </div>
+    </form>
+
+    <!-- Help Section at the Bottom -->
+    <div class="help">
+      <p>Facing Issues?
+        <span>
+          <a href="mailto:nirupomboseroy99@gmail.com?subject=Support Request" target="_top">Email Support!</a>
+        </span>
+      </p>
+    </div>
+
+  </div>
+</div>

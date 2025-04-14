@@ -1,0 +1,45 @@
+<div class="login-container">
+  <div class="shape-overlay"></div>
+
+  <div class="login-box">
+    <!-- Product Name -->
+    <h1 class="product-name">DocuShield</h1>
+    <h6 class="product-tag">A secure credential registrar</h6>
+
+    <!-- Login Heading -->
+    <h2 class="text-center mb-4">Sign In</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginWithEmailAndPassword()">
+      <!-- Email Input -->
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email" required />
+        <span class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          Invalid email address
+        </span>
+      </div>
+
+      <!-- Password Input -->
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password" required />
+        <span class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character (&#64;$!%*?&).
+        </span>
+      </div>
+
+      <!-- Error Message -->
+      <div class="error-message" *ngIf="isError">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Sign In Button -->
+      <button type="submit" class="btn-signin" [disabled]="loginForm.invalid">Sign In</button>
+
+      <!-- Forgot Password & Sign Up Link -->
+      <div class="extra-options">
+        <button class="signup-link btn btn-dark" (click)="goToSignUp()">New user? Create account</button>
+      </div>
+    </form>
+  </div>
+</div>
