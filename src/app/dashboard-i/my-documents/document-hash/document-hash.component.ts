@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserRequestService } from '../../../../requests/user-request.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-document-hash',
   templateUrl: './document-hash.component.html',
-  styleUrls: ['./document-hash.component.css']
+  styleUrls: ['./document-hash.component.css'],
+  imports: [CommonModule]
 })
 export class DocumentHashComponent implements OnInit {
   static pathRoute: string = "document-hash"
