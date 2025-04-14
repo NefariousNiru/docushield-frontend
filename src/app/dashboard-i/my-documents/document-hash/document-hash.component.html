@@ -1,0 +1,11 @@
+<div class="hash-view-container">
+  <h2>📎 Document Hash</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="hash" class="hash-block">
+    <code>{{ hash }}</code>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.hash-view-container {
+  padding: 2rem;
+  color: #1e1e1e;
+}
+
+.hash-block {
+  background-color: #111;
+  border: 1px solid #444;
+  padding: 1rem;
+  font-family: monospace;
+  word-break: break-all;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #ff4b5c;
+}

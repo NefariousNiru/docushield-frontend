@@ -1,0 +1,28 @@
+.documents-container {
+  padding: 2rem;
+  color: #1e1e1e;
+}
+
+.doc-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.doc-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 18px;
+  color: #00e6e6;
+}
+
+.error-message {
+  color: #ff4b5c;
+  margin-top: 1rem;
+}
+
+.no-docs {
+  color: #888;
+  margin-top: 2rem;
+}

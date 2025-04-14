@@ -1,3 +1,18 @@
-<p>
-  my-documents works!
-</p>
+<div class="documents-container">
+  <h2>📄 My Documents</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="documents.length === 0 && !errorMessage" class="no-docs">
+    No documents found.
+  </div>
+
+  <div *ngFor="let doc of documents" class="doc-card">
+    <h3>{{ doc.title }}</h3>
+    <p>Uploaded by: <strong>{{ doc.uploaded_by }}</strong></p>
+    <p>Uploaded on: {{ formatDate(doc.created_at) }}</p>
+    <button (click)="viewHash(doc.id)">🔗 View Hash</button>
+  </div>
+</div>
