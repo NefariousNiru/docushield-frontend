@@ -11,8 +11,12 @@
 
   <div *ngFor="let doc of documents" class="doc-card">
     <h3>{{ doc.title }}</h3>
-    <p>Uploaded by: <strong>{{ doc.uploaded_by }}</strong></p>
-    <p>Uploaded on: {{ formatDate(doc.created_at) }}</p>
-    <button (click)="viewHash(doc.id)">🔗 View Hash</button>
+    <p>Uploaded by {{ doc.uploaded_by }}</p>
+    <p>Uploaded on {{ doc.created_at * 1000 | date:'mediumDate' }}</p>
+    <button class="view-button" (click)="viewHash(doc.id)">
+      🔗 View Hash
+    </button> &nbsp;
+    <!-- TODO: For future version -->
+    <!-- <button class="view-button" (click)="download(doc.id)">⬇️ Download</button> -->
   </div>
 </div>

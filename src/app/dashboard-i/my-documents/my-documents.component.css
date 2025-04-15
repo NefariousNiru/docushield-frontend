@@ -1,28 +1,72 @@
+/* Matte Dark Theme Base */
+body {
+  background-color: #121212;
+  color: #eaeaea;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
 .documents-container {
   padding: 2rem;
-  color: #1e1e1e;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* Document card */
 .doc-card {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  background-color: #1c1c1c;
+  border: 1px solid #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  color: #eaeaea;
 }
 
+/* Document title */
 .doc-card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 18px;
-  color: #00e6e6;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  color: #00ffe7;
 }
 
+/* Info text inside card */
+.doc-card p {
+  margin: 0.25rem 0;
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+/* Button styling */
+.view-button {
+  margin-top: 1rem;
+  background-color: #00e6e6;
+  color: #121212;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #00cccc;
+}
+
+/* No document notice */
+.no-docs {
+  color: #aaa;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Error message */
 .error-message {
   color: #ff4b5c;
+  font-weight: bold;
   margin-top: 1rem;
-}
-
-.no-docs {
-  color: #888;
-  margin-top: 2rem;
 }

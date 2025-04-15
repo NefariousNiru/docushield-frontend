@@ -11,7 +11,7 @@ export class AuthRequestService {
   constructor(private http: HttpClient) { }
 
   signUp(payload: any): Observable<any> {
-    return this.http.post(`${URIs.BASE_URL}${URIs.AUTH}${URIs.SIGN_UP}`, payload, {withCredentials: true}).pipe(
+    return this.http.post(`${URIs.BASE_URL}${URIs.SIGN_UP}`, payload, {withCredentials: true}).pipe(
       catchError((error) => {
         return throwError(() => error);
       })
@@ -19,7 +19,7 @@ export class AuthRequestService {
   }
 
   signIn(payload: any): Observable<any> {
-    return this.http.post(`${URIs.BASE_URL}${URIs.AUTH}${URIs.SIGN_IN}`, payload, {withCredentials: true}).pipe(
+    return this.http.post(`${URIs.BASE_URL}${URIs.SIGN_IN}`, payload, {withCredentials: true}).pipe(
       catchError((error) => {
         return throwError(() => error);
       })

@@ -33,6 +33,36 @@ export class MyDocumentsComponent implements OnInit {
   }
 
   viewHash(docId: string) {
-    this.router.navigate([`/dashboard-i/document-hash`, docId]);
+    this.router.navigate([`/dashboard-i/document-hash/${docId}`]);
+  }
+
+  download(documentId: string): void {
+    this.userRequestService.downloadDocument(documentId).subscribe({
+      next: (response) => {
+        const blob = response.body;
+        const contentDisposition = response.headers.get('Content-Disposition');
+
+        let filename = `document-${documentId}.bin`; // fallback
+
+        if (contentDisposition) {
+          const match = contentDisposition.match(/filename="?(.+?)"?$/);
+          if (match && match[1]) {
+            filename = match[1];
+          }
+        }
+
+        // Trigger download
+        const url = window.URL.createObjectURL(blob!!);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        link.click();
+        window.URL.revokeObjectURL(url);
+      },
+      error: (err) => {
+        console.error('Download failed:', err);
+        alert("Failed to download document.");
+      }
+    });
   }
 }

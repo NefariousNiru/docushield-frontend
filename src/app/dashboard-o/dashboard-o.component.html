@@ -1,3 +1,10 @@
-<p>
-  dashboard-o works!
-</p>
+<div class="dashboard-container">
+  <h2>Organization Dashboard</h2>
+
+  <div class="tile-grid">
+    <div *ngFor="let tile of tiles" class="tile" [routerLink]="['/dashboard-o', tile.path]">
+      <i class="bi" [ngClass]="tile.icon"></i>
+      <span>{{ tile.title }}</span>
+    </div>
+  </div>
+</div>
