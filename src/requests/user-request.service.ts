@@ -67,4 +67,10 @@ export class UserRequestService {
     );
   }
 
+  getMyUploads(): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${URIs.BASE_URL}${URIs.GET_DOCUMENT_UPLOADS}`,
+      { withCredentials: true }
+    );
+  }
 }

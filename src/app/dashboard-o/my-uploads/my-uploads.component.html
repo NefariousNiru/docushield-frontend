@@ -1,3 +1,12 @@
-<p>
-  my-uploads works!
-</p>
+<div class="uploads-container">
+  <h2>My Uploads</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="uploads.length === 0">You haven’t uploaded any documents yet.</div>
+
+  <div *ngFor="let doc of uploads" class="upload-card">
+    <h3>{{ doc.title }}</h3>
+    <p>Uploaded for: {{ doc.uploaded_for }}</p>
+    <p>Uploaded on: {{ doc.created_at * 1000 | date:'medium' }}</p>
+  </div>
+</div>

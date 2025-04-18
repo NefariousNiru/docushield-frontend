@@ -1,0 +1,21 @@
+.settings-container {
+  padding: 2rem;
+  color: #1e1e1e;
+  font-family: monospace;
+}
+
+.public-key-block {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: 1rem;
+  color: #00e6e6;
+}
+
+.error-message {
+  color: #ff5c5c;
+  margin-top: 1rem;
+}

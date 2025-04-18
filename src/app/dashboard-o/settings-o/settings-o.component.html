@@ -1,3 +1,11 @@
-<p>
-  settings-o works!
-</p>
+<div class="settings-container">
+  <h2>🔐 My Public Key</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <pre *ngIf="publicKey" class="public-key-block">
+{{ publicKey }}
+  </pre>
+</div>

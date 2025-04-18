@@ -1,0 +1,39 @@
+.uploads-container {
+  padding: 2rem;
+  background-color: #121212;
+  min-height: 100vh;
+  color: #eaeaea;
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.upload-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.upload-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #00e6e6;
+  font-size: 18px;
+}
+
+.upload-card p {
+  margin: 0.2rem 0;
+  color: #ccc;
+}
+
+.error-message {
+  color: #ff4b5c;
+  background-color: #2a0000;
+  padding: 1rem;
+  border-radius: 5px;
+}
