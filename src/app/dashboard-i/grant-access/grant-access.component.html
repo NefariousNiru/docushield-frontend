@@ -1,3 +1,21 @@
-<p>
-  grant-access works!
-</p>
+<div class="grant-access-container">
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="requests.length === 0 && !errorMessage" class="empty">
+    No access requests found.
+  </div>
+
+  <div *ngFor="let req of requests" class="access-card">
+    <h3>{{ req.document_title }}</h3>
+    <p>👤 Requested By: {{ req.requester_name }}</p>
+    <p>🏛 Issued By: {{ req.issuer_name }}</p>
+    <p>📅 Requested At: {{ req.requested_at * 1000 | date:'medium' }}</p>
+
+    <div class="actions">
+      <button (click)="approve(req.request_id)">✅ Approve</button>
+      <button (click)="decline(req.request_id)">❌ Decline</button>
+    </div>
+  </div>
+</div>

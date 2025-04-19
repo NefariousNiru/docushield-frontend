@@ -75,4 +75,9 @@ export class UserRequestService {
   requestAccess(payload: any): Observable<any> {
     return this.http.post(`${URIs.BASE_URL}${URIs.REQUEST_ACCESS}`, payload, { withCredentials: true });
   }
+
+  getPendingAccessRequests(): Observable<any[]> {
+    return this.http.get<any[]>(`${URIs.BASE_URL}${URIs.GRANT_ACCESS}`, { withCredentials: true });
+  }
+
 }

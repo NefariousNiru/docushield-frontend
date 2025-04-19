@@ -10,6 +10,7 @@ export class URIs {
   static GET_DOCUMENT_UPLOADS = this.GET_DOCUMENTS + "/upload";
   static GET_ACCESS_HISTORY = this.ME_V1 + "/access-history";
   static REQUEST_ACCESS = this.ME_V1 + "/request-access";
+  static GRANT_ACCESS = this.ME_V1 + "/grant";
 }
 
 export class Constants {

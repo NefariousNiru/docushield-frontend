@@ -1,0 +1,55 @@
+.grant-access-container {
+  padding: 1.5rem;
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+.access-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.access-card h3 {
+  color: #00ffe7;
+  margin-bottom: 0.5rem;
+}
+
+.access-card p {
+  margin: 0.25rem 0;
+  color: #cccccc;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  background-color: #00e6e6;
+  border: none;
+  color: #121212;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.actions button:hover {
+  background-color: #00cccc;
+}
+
+.error-message {
+  color: #ff4b5c;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  color: #999;
+  font-style: italic;
+}
