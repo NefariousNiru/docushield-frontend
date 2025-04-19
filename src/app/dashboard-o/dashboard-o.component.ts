@@ -20,7 +20,6 @@ export class DashboardOComponent implements OnInit {
     { title: "My Uploads", icon: "bi-folder2-open", path: MyUploadsComponent.pathRoute },
     { title: "Request Access", icon: "bi-person-plus", path: "request" },
     { title: "Access Status", icon: "bi-check-circle", path: "status" },
-    { title: "Audit Log", icon: "bi-clipboard-data", path: "audit" },
     { title: "Settings", icon: "bi-gear", path: SettingsOComponent.pathRoute }
   ];
 

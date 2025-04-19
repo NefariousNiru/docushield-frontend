@@ -73,4 +73,13 @@ export class UserRequestService {
       { withCredentials: true }
     );
   }
+
+  getAccessHistory(): Observable<any[]> {
+    return this.http.get<any[]>(
+      `${URIs.BASE_URL}${URIs.GET_ACCESS_HISTORY}`,
+      { withCredentials: true }
+    );
+  }
+
+
 }

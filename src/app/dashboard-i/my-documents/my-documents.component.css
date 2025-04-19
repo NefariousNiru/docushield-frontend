@@ -1,45 +1,50 @@
-/* Matte Dark Theme Base */
-body {
-  background-color: #121212;
-  color: #eaeaea;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Main container */
 .documents-container {
   padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Document card */
-.doc-card {
-  background-color: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  background-color: #121212;
   color: #eaeaea;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Document title */
+h2 {
+  margin-bottom: 2rem;
+  color: #00e6e6;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.5rem;
+}
+
+/* Each document entry styled like Access History */
+.doc-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.doc-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+
+/* Document Title */
 .doc-card h3 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.2rem;
   color: #00ffe7;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
 }
 
-/* Info text inside card */
+/* Info text */
 .doc-card p {
-  margin: 0.25rem 0;
+  margin: 0.4rem 0;
   color: #cccccc;
   font-size: 0.95rem;
 }
 
-/* Button styling */
+/* Action Buttons */
 .view-button {
   margin-top: 1rem;
   background-color: #00e6e6;
@@ -47,8 +52,9 @@ body {
   border: none;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
@@ -56,17 +62,20 @@ body {
   background-color: #00cccc;
 }
 
-/* No document notice */
+/* Empty / Error states */
 .no-docs {
   color: #aaa;
   font-style: italic;
   font-size: 1rem;
   margin-top: 2rem;
+  text-align: center;
 }
 
-/* Error message */
 .error-message {
   color: #ff4b5c;
+  background-color: #2a0000;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
   font-weight: bold;
-  margin-top: 1rem;
 }

@@ -9,6 +9,7 @@ export class URIs {
   static DOWNLOAD_DOCUMENT = this.GET_DOCUMENTS + "/download"
   static GET_DOCUMENT_HASH = this.GET_DOCUMENTS + "/hash";
   static GET_DOCUMENT_UPLOADS = this.GET_DOCUMENTS + "/upload";
+  static GET_ACCESS_HISTORY = this.ME_V1 + "/access-history";
 }
 
 export class Constants {

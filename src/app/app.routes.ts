@@ -10,6 +10,7 @@ import { DocumentHashComponent } from './dashboard-i/my-documents/document-hash/
 import { UploadDocsComponent } from './dashboard-o/upload-docs/upload-docs.component';
 import { MyUploadsComponent } from './dashboard-o/my-uploads/my-uploads.component';
 import { SettingsOComponent } from './dashboard-o/settings-o/settings-o.component';
+import { AccessHistoryComponent } from './dashboard-i/access-history/access-history.component';
 
 
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: `${DashboardIComponent.pathRoute}/${MyDocumentsComponent.pathRoute}`, component: MyDocumentsComponent },
   { path: `${DashboardIComponent.pathRoute}/${SettingsIComponent.pathRoute}`, component: SettingsIComponent },
   { path: `${DashboardIComponent.pathRoute}/${DocumentHashComponent.pathRoute}/:id`, component: DocumentHashComponent },
+  { path: `${DashboardIComponent.pathRoute}/${AccessHistoryComponent.pathRoute}`, component: AccessHistoryComponent},
 
   // Organization Dashboard routes
   { path: DashboardOComponent.pathRoute, component: DashboardOComponent, title: "Dashboard" },

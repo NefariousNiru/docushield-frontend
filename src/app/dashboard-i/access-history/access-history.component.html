@@ -1,0 +1,15 @@
+<div class="access-history-container">
+  <h2>Access History</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div *ngIf="history.length === 0">No access requests found.</div>
+
+  <div *ngFor="let entry of history" class="history-card">
+    <h3>{{ entry.document_title }}</h3>
+    <p>🔍 Requested By: {{ entry.organization_name }}</p>
+    <p>📅 Requested At: {{ entry.requested_at * 1000 | date:'medium' }}</p>
+    <p *ngIf="entry.approved_at">✅ Approved At: {{ entry.approved_at * 1000 | date:'medium' }}</p>
+    <p>Status: <span class="badge" [ngClass]="entry.status.toLowerCase()">{{ entry.status }}</span></p>
+  </div>
+</div>
