@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { URIs } from '../../constants';
 import { CommonModule } from '@angular/common';
 import { UserRequestService } from '../../../requests/user-request.service';
 
@@ -28,4 +27,11 @@ export class SettingsIComponent implements OnInit {
     });
   }
 
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy.");
+    });
+  }
 }

@@ -7,5 +7,6 @@
 
   <div *ngIf="hash" class="hash-block">
     {{ hash }}
+    <button class="copy-btn" (click)="copyToClipboard(hash)">📋 Copy</button>
   </div>
 </div>

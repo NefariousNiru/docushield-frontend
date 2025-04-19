@@ -5,7 +5,8 @@
     {{ errorMessage }}
   </div>
 
-  <pre *ngIf="publicKey" class="public-key-block">
-{{ publicKey }}
-  </pre>
+  <div *ngIf="publicKey" class="public-key-block">
+    {{ publicKey }}
+    <button class="copy-btn" (click)="copyToClipboard(publicKey)">📋 Copy</button>
+  </div>
 </div>

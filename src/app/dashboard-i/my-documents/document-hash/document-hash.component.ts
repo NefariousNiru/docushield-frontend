@@ -32,4 +32,13 @@ export class DocumentHashComponent implements OnInit {
     });
   }
 
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy.");
+    });
+  }
+
+
 }
