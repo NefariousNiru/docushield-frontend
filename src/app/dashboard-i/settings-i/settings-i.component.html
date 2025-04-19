@@ -1,12 +1,19 @@
 <div class="settings-container">
-  <h2>🔐 My Public Key</h2>
+  <h2>🔐 Settings</h2>
 
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
 
   <div *ngIf="publicKey" class="public-key-block">
+    <h2>Public Key: </h2>
     {{ publicKey }}
     <button class="copy-btn" (click)="copyToClipboard(publicKey)">📋 Copy</button>
+  </div>
+
+  <div *ngIf="userId" class="public-key-block">
+    <h2>User ID: </h2>
+    {{ userId }}
+    <button class="copy-btn" (click)="copyToClipboard(userId)">📋 Copy</button>
   </div>
 </div>

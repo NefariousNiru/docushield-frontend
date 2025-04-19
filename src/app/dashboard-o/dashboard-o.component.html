@@ -1,10 +1,30 @@
-<div class="dashboard-container">
-  <h2>Organization Dashboard</h2>
+<div class="dashboard-o-layout">
+  <!-- Left: Upload Docs -->
+  <div class="pane upload-pane">
+    <app-upload-docs></app-upload-docs>
+  </div>
 
-  <div class="tile-grid">
-    <div *ngFor="let tile of tiles" class="tile" [routerLink]="['/dashboard-o', tile.path]">
-      <i class="bi" [ngClass]="tile.icon"></i>
-      <span>{{ tile.title }}</span>
+  <!-- Middle: Request Access -->
+  <div class="pane request-pane">
+    <app-request-access></app-request-access>
+  </div>
+
+  <!-- Right: Quick Actions (Tiles) -->
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="tile-column">
+      <div class="tile" [routerLink]="['/dashboard-o/my-upload']">
+        <div class="tile-icon">📂</div>
+        <div class="tile-label">My Uploads</div>
+      </div>
+      <div class="tile" [routerLink]="['/dashboard-o/status']">
+        <div class="tile-icon">📊</div>
+        <div class="tile-label">Access Status</div>
+      </div>
+      <div class="tile" [routerLink]="['/dashboard-o/settings']">
+        <div class="tile-icon">⚙️</div>
+        <div class="tile-label">Settings</div>
+      </div>
     </div>
   </div>
 </div>

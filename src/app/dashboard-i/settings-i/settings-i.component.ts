@@ -12,6 +12,7 @@ import { UserRequestService } from '../../../requests/user-request.service';
 export class SettingsIComponent implements OnInit {
   static pathRoute: string = "settings"
   publicKey: string | null = null;
+  userId: string | null = null;
   errorMessage: string | null = null;
 
   constructor(private userRequestService: UserRequestService) {}
@@ -20,6 +21,7 @@ export class SettingsIComponent implements OnInit {
     this.userRequestService.getPublicKey().subscribe({
       next: (res) => {
         this.publicKey = res.public_key || 'Public key not found';
+        this.userId = res.user_id || 'User ID not found'
       },
       error: (err) => {
         this.errorMessage = err.error?.detail || 'Failed to load public key';

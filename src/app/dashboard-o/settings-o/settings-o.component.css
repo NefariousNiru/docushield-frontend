@@ -1,21 +1,55 @@
 .settings-container {
   padding: 2rem;
-  color: #1e1e1e;
-  font-family: monospace;
+  background-color: #121212;
+  color: #eaeaea;
+  font-family: 'Fira Code', monospace;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #00e6e6;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.5rem;
 }
 
 .public-key-block {
   background-color: #1e1e1e;
-  padding: 1rem;
-  border: 1px solid #444;
+  padding: 1.2rem;
+  border: 1px solid #333;
   border-radius: 8px;
   white-space: pre-wrap;
   word-break: break-word;
   margin-top: 1rem;
-  color: #00e6e6;
+  color: #00f7ff;
+  font-size: 0.9rem;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.1);
+  overflow-x: auto;
 }
 
 .error-message {
-  color: #ff5c5c;
+  color: #ff4b5c;
+  background-color: #2a0000;
+  padding: 1rem;
+  border-radius: 6px;
   margin-top: 1rem;
+  font-weight: bold;
+}
+
+.copy-btn {
+  margin-top: 0.75rem;
+  background-color: #00e6e6;
+  color: #121212;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #00cccc;
 }

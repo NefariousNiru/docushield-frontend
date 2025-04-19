@@ -1,0 +1,31 @@
+<div class="request-container">
+  <h2>🔍 Request Document Access</h2>
+
+  <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+    <!-- Document Hash -->
+    <div class="form-group">
+      <label>Document ID</label>
+      <input type="text" formControlName="document_id" class="form-control" placeholder="Enter document id (from student/applicant)" />
+    </div>
+
+    <!-- Owner ID -->
+    <div class="form-group">
+      <label>Owner ID (UUID)</label>
+      <input type="text" formControlName="owner_id" class="form-control" placeholder="User ID of document owner" />
+    </div>
+
+    <!-- Optional: Purpose (for future) -->
+    <!--
+    <div class="form-group">
+      <label>Purpose (optional)</label>
+      <textarea formControlName="purpose" class="form-control" rows="3" placeholder="Explain reason for requesting access"></textarea>
+    </div>
+    -->
+
+    <!-- Submit -->
+    <button type="submit" class="btn mt-3">Request Access</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+</div>

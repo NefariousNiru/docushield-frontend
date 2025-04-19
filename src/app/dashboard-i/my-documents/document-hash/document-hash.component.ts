@@ -23,13 +23,7 @@ export class DocumentHashComponent implements OnInit {
       this.errorMessage = "Invalid document ID";
       return;
     }
-
-    this.userRequestService.getDocumentHash(docId).subscribe({
-      next: (res) => this.hash = res.hash,
-      error: (err) => {
-        this.errorMessage = err.error?.detail || 'Failed to fetch document hash';
-      }
-    });
+    this.hash = docId;
   }
 
   copyToClipboard(text: string): void {

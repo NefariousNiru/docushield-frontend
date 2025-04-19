@@ -10,8 +10,8 @@ import { DocumentResponse } from '../app/models/document-response';
 export class UserRequestService {
   constructor(private http: HttpClient) {}
 
-  getPublicKey(): Observable<{ public_key: string }> {
-    return this.http.get<{ public_key: string }>(
+  getPublicKey(): Observable<{user_id: string; public_key: string}> {
+    return this.http.get<{ public_key: string, user_id: string}>(
       `${URIs.BASE_URL}${URIs.GET_PUBLIC_KEY}`,
       { withCredentials: true }
     ).pipe(
@@ -25,15 +25,6 @@ export class UserRequestService {
       { withCredentials: true }
     ).pipe(
       catchError(error => throwError(() => error))
-    );
-  }
-
-  getDocumentHash(docId: string): Observable<{ hash: string }> {
-    return this.http.get<{ hash: string }>(
-      `${URIs.BASE_URL}${URIs.GET_DOCUMENT_HASH}?document_id=${docId}`,
-      { withCredentials: true }
-    ).pipe(
-      catchError((error) => throwError(() => error))
     );
   }
 
@@ -81,5 +72,7 @@ export class UserRequestService {
     );
   }
 
-
+  requestAccess(payload: any): Observable<any> {
+    return this.http.post(`${URIs.BASE_URL}${URIs.REQUEST_ACCESS}`, payload, { withCredentials: true });
+  }
 }
