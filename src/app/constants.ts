@@ -1,5 +1,7 @@
+import { environment } from "../environments/environment";
+
 export class URIs {
-  static BASE_URL: string = "http://localhost:8000";
+  static readonly BASE_URL: string = environment.apiBaseUrl;
   static AUTH: string = "/v1/auth";
   static SIGN_IN: string = this.AUTH + "/signin";
   static SIGN_UP = this.AUTH + "/signup";
