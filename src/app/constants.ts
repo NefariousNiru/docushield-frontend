@@ -11,6 +11,8 @@ export class URIs {
   static GET_ACCESS_HISTORY = this.ME_V1 + "/access-history";
   static REQUEST_ACCESS = this.ME_V1 + "/request-access";
   static GRANT_ACCESS = this.ME_V1 + "/grant";
+  static REQUEST_STATUS = this.ME_V1 + "/request-status";
+  static DOWNLOAD = this.ME_V1 + "/download";
 }
 
 export class Constants {

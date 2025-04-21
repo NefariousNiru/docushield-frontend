@@ -13,9 +13,9 @@
     <p>🏛 Issued By: {{ req.issuer_name }}</p>
     <p>📅 Requested At: {{ req.requested_at * 1000 | date:'medium' }}</p>
 
-    <div class="actions">
-      <button (click)="approve(req.request_id)">✅ Approve</button>
-      <button (click)="decline(req.request_id)">❌ Decline</button>
+    <div class="btn-group">
+      <button (click)="approve(req.request_id)" class="btn btn-approve">✅ Approve</button>
+      <button (click)="decline(req.request_id)" class="btn btn-decline">❌ Decline</button>
     </div>
   </div>
 </div>

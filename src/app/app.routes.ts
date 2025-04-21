@@ -11,6 +11,7 @@ import { UploadDocsComponent } from './dashboard-o/upload-docs/upload-docs.compo
 import { MyUploadsComponent } from './dashboard-o/my-uploads/my-uploads.component';
 import { SettingsOComponent } from './dashboard-o/settings-o/settings-o.component';
 import { AccessHistoryComponent } from './dashboard-i/access-history/access-history.component';
+import { AccessStatusComponent } from './dashboard-o/access-status/access-status.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,7 @@ export const routes: Routes = [
   { path: `${DashboardOComponent.pathRoute}/${UploadDocsComponent.pathRoute}`, component: UploadDocsComponent },
   { path: `${DashboardOComponent.pathRoute}/${MyUploadsComponent.pathRoute}`, component: MyUploadsComponent },
   { path: `${DashboardOComponent.pathRoute}/${SettingsOComponent.pathRoute}`, component: SettingsOComponent },
+  { path: `${DashboardOComponent.pathRoute}/${AccessStatusComponent.pathRoute}`, component: AccessStatusComponent },
 ];
 
 

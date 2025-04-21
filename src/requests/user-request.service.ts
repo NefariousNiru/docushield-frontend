@@ -47,17 +47,6 @@ export class UserRequestService {
     );
   }
 
-  downloadDocument(documentId: string): Observable<HttpResponse<Blob>> {
-    return this.http.get(
-      `${URIs.BASE_URL}${URIs.DOWNLOAD_DOCUMENT}?document_id=${documentId}`,
-      {
-        observe: 'response',
-        responseType: 'blob',
-        withCredentials: true
-      }
-    );
-  }
-
   getMyUploads(): Observable<any[]> {
     return this.http.get<any[]>(
       `${URIs.BASE_URL}${URIs.GET_DOCUMENT_UPLOADS}`,
@@ -80,4 +69,32 @@ export class UserRequestService {
     return this.http.get<any[]>(`${URIs.BASE_URL}${URIs.GRANT_ACCESS}`, { withCredentials: true });
   }
 
+  grantAccess(accessId: string, approve: boolean): Observable<any> {
+    const payload = {
+      access_id: accessId,
+      approve: approve
+    };
+
+    return this.http.post(`${URIs.BASE_URL}${URIs.GRANT_ACCESS}`, payload, {
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).pipe(
+      catchError((error) => throwError(() => error))
+    );
+  }
+
+  getAccessStatus(): Observable<any> {
+    return this.http.get(`${URIs.BASE_URL}${URIs.REQUEST_STATUS}`, { withCredentials: true });
+  }
+
+  
+  downloadDocument(accessId: string): Observable<Blob> {
+    const url = `${URIs.BASE_URL}${URIs.DOWNLOAD}?access_id=${accessId}`;
+    return this.http.get(url, {
+      withCredentials: true,
+      responseType: 'blob'  // Important to treat the response as a file
+    });
+  }
 }

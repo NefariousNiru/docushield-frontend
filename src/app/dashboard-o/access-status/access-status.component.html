@@ -1,0 +1,26 @@
+<div class="access-status-container">
+  <h2>📁 Access Status</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div class="status-grid">
+    <div class="status-column" *ngFor="let status of statuses">
+      <h3>{{ status.label }}</h3>
+
+      <div *ngIf="requests[status.key]?.length === 0" class="empty-state">
+        No {{ status.label.toLowerCase() }} requests
+      </div>
+
+      <div *ngFor="let req of requests[status.key]" class="request-card">
+        <p><strong>📄 Title:</strong> {{ req.document_title }}</p>
+        <p><strong>👤 Owner:</strong> {{ req.owner_name }}</p>
+        <p><strong>📅 Requested:</strong> {{ req.requested_at * 1000 | date:'medium' }}</p>
+        <p *ngIf="req.approved_at"><strong>✅ Approved:</strong> {{ req.approved_at * 1000 | date:'medium' }}</p>
+
+        <button *ngIf="status.key === 'APPROVED'" (click)="download(req.access_id)">
+          ⬇️ Download
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
