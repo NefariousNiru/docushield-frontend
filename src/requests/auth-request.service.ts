@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError, map, of } from 'rxjs';
 import { URIs } from '../app/constants';
 
 @Injectable({
@@ -23,6 +23,15 @@ export class AuthRequestService {
       catchError((error) => {
         return throwError(() => error);
       })
+    );
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.http.get<{user_id: string, role: string}>(`${URIs.BASE_URL}${URIs.ME_V1}`, {
+      withCredentials: true
+    }).pipe(
+      map(() => true),
+      catchError(() => of(false))
     );
   }
 }
