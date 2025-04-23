@@ -13,10 +13,17 @@ import { SettingsOComponent } from './dashboard-o/settings-o/settings-o.componen
 import { AccessHistoryComponent } from './dashboard-i/access-history/access-history.component';
 import { AccessStatusComponent } from './dashboard-o/access-status/access-status.component';
 import { AuthGuard } from './auth/auth.guard';
+import { DashboardRedirectGuard } from './auth/dashboard-redirect.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 export const routes: Routes = [
-  { path: "", redirectTo: LoginComponent.pathRoute, pathMatch: "full" },
+  {
+    path: "",
+    canActivate: [DashboardRedirectGuard],
+    pathMatch: "full",
+    children: []
+  },
 
   // Public Login route
   { path: LoginComponent.pathRoute, component: LoginComponent, title: "Sign In" },
@@ -46,7 +53,7 @@ export const routes: Routes = [
     ]
   },
 
-  { path: '**', redirectTo: 'login' }
+  { path: '**', component: NotFoundComponent}
 ];
 
 

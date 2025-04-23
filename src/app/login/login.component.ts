@@ -49,10 +49,8 @@ export class LoginComponent implements OnInit {
       // Go to Dashboard
       if (response["role"] === 'INDIVIDUAL') {
         this.router.navigate(["/" + DashboardIComponent.pathRoute]);
-        localStorage.setItem("role", response["role"])
       } else if (response["role"] === 'ORGANIZATION') {
         this.router.navigate(["/" + DashboardOComponent.pathRoute]);
-        localStorage.setItem("role", response["role"])
       }
     },
     error: (err) => {

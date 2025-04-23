@@ -5,6 +5,7 @@ export class URIs {
   static AUTH: string = "/v1/auth";
   static SIGN_IN: string = this.AUTH + "/signin";
   static SIGN_UP = this.AUTH + "/signup";
+  static LOGOUT_V1 = this.AUTH + "/logout";
   static ME_V1 = "/v1/me";
   static GET_PUBLIC_KEY = this.ME_V1 + "/pubkey";
   static GET_DOCUMENTS = this.ME_V1 + "/document";
