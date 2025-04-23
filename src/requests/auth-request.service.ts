@@ -34,4 +34,20 @@ export class AuthRequestService {
       catchError(() => of(false))
     );
   }
+
+  getUserInfo(): Observable<{ user_id: string; role: 'INDIVIDUAL'|'ORGANIZATION' }> {
+    return this.http
+      .get<{ user_id: string; role: 'INDIVIDUAL'|'ORGANIZATION' }>(
+        `${URIs.BASE_URL}${URIs.ME_V1}`,
+        { withCredentials: true }
+      );
+  }
+
+  logout(): Observable<any> {
+    return this.http.post(
+      `${URIs.BASE_URL}${URIs.LOGOUT_V1}`,
+      {},
+      { withCredentials: true }
+    );
+  }
 }

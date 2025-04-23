@@ -49,10 +49,8 @@ export class LoginComponent implements OnInit {
       // Go to Dashboard
       if (response["role"] === 'INDIVIDUAL') {
         this.router.navigate(["/" + DashboardIComponent.pathRoute]);
-        localStorage.setItem("role", response["role"])
       } else if (response["role"] === 'ORGANIZATION') {
         this.router.navigate(["/" + DashboardOComponent.pathRoute]);
-        localStorage.setItem("role", response["role"])
       }
     },
     error: (err) => {
@@ -61,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.errorMessage = err.error?.detail || "Invalid email or password.";
         this.isError = true;
       } else {
-        this.errorMessage = "Something went wrong. Please try again later.";
+        this.errorMessage = err.error?.detail || "Something went wrong. Please try again later.";
         this.isError = true;
       }
     }

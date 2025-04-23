@@ -58,7 +58,6 @@ export class SignupComponent implements OnInit {
     this.authRequestService.signUp({ name, email, password, account_type: role }).subscribe({
       next: (response) => {
         console.log('Registration successful:', response);
-        localStorage.setItem("role", role)
         if (role === 'INDIVIDUAL') {
           this.router.navigate(["/" + DashboardIComponent.pathRoute]);
         } else if (role=== 'ORGANIZATION') {
