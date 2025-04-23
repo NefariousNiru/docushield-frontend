@@ -42,4 +42,12 @@ export class AuthRequestService {
         { withCredentials: true }
       );
   }
+
+  logout(): Observable<any> {
+    return this.http.post(
+      `${URIs.BASE_URL}${URIs.LOGOUT_V1}`,
+      {},
+      { withCredentials: true }
+    );
+  }
 }

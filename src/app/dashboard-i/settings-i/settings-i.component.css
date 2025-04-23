@@ -53,3 +53,25 @@ h2 {
 .copy-btn:hover {
   background-color: #00cccc;
 }
+
+/* settings-i.component.css */
+
+.logout-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-logout {
+  background-color: #ff4b5c;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #e04350;
+}

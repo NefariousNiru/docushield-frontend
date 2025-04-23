@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         this.errorMessage = err.error?.detail || "Invalid email or password.";
         this.isError = true;
       } else {
-        this.errorMessage = "Something went wrong. Please try again later.";
+        this.errorMessage = err.error?.detail || "Something went wrong. Please try again later.";
         this.isError = true;
       }
     }
